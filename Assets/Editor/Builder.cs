@@ -11,7 +11,7 @@ public class Builder : MonoBehaviour {
     [UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
     public static void BuildProjectAllSceneAndroid()
     {
-        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
+        //EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
         List<string> allScene = new List<string>();
         foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
         {
@@ -21,7 +21,7 @@ public class Builder : MonoBehaviour {
             }
         };
 
-        Debug.LogError("[Scene!]" + allScene.ToArray().Length);
+        //Debug.LogError("[Scene!]" + allScene.ToArray().Length);
 
         string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
@@ -35,12 +35,12 @@ public class Builder : MonoBehaviour {
         if (!string.IsNullOrEmpty(errorMessage))
         {
             Debug.LogError("[Error!] " + errorMessage);
-            EditorApplication.Exit(1);
+            //EditorApplication.Exit(1);
         }
         else
         {
             Debug.Log("[Success!]");
-            EditorApplication.Exit(0);
+            //EditorApplication.Exit(0);
         }
     }
 
