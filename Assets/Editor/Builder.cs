@@ -18,15 +18,24 @@ public class Builder : MonoBehaviour {
             if (scene.enabled)
             {
                 allScene.Add(scene.path);
+                Debug.LogError(scene.path);
             }
         };
      
         PlayerSettings.statusBarHidden = true;
-        BuildPipeline.BuildPlayer(
+        string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
             Application.dataPath + "/Editor/newgame.apk",
             BuildTarget.Android,
             BuildOptions.None
         );
+
+
+        // 結果出力
+        if (!string.IsNullOrEmpty(errorMessage))
+            Debug.LogError("[Error!] " + errorMessage);
+        else
+            Debug.Log("[Success!]");
     }
+
 }
