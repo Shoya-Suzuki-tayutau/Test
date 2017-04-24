@@ -11,7 +11,7 @@ public class Builder : MonoBehaviour {
     [UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
     public static void BuildProjectAllSceneAndroid()
     {
-        //EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
         List<string> allScene = new List<string>();
         foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
         {
