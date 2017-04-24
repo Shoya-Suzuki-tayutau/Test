@@ -24,7 +24,7 @@ public class Builder : MonoBehaviour {
         PlayerSettings.statusBarHidden = true;
         BuildPipeline.BuildPlayer(
             allScene.ToArray(),
-            "newgame.apk",
+            Application.dataPath + "/Editor/newgame.apk",
             BuildTarget.Android,
             BuildOptions.None
         );
