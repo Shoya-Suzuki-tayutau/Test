@@ -24,7 +24,7 @@ public class Builder : MonoBehaviour {
      
         string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
-            "C:/Program Files (x86)/Jenkins/workspace/Test/Wavw.apk",
+            "C:/Program Files (x86)/Jenkins/workspace/Test",
             BuildTarget.Android,
             BuildOptions.None
         );
