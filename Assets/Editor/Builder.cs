@@ -18,10 +18,11 @@ public class Builder : MonoBehaviour {
             if (scene.enabled)
             {
                 allScene.Add(scene.path);
-                Debug.LogError("[Scene!]"+scene.path);
             }
         };
-     
+
+        Debug.LogError("[Scene!]" + allScene.ToArray().Length);
+
         string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
             "test",
