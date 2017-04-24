@@ -11,21 +11,21 @@ public class Builder : MonoBehaviour {
     [UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
     public static void BuildProjectAllSceneAndroid()
     {
-        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
+        //EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
         List<string> allScene = new List<string>();
         foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
         {
             if (scene.enabled)
             {
                 allScene.Add(scene.path);
-                Debug.LogError(scene.path);
+                Debug.LogError("[Scene!]"+scene.path);
             }
         };
      
         PlayerSettings.statusBarHidden = true;
         string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
-            Application.dataPath + "/Editor/newgame.apk",
+            "C:/Program Files (x86)/Jenkins/workspace/Test/Wavw.apk",
             BuildTarget.Android,
             BuildOptions.None
         );
