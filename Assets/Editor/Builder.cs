@@ -24,17 +24,23 @@ public class Builder : MonoBehaviour {
      
         string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
-            "C:/Program Files (x86)/Jenkins/workspace/Test",
+            "test",
             BuildTarget.Android,
-            BuildOptions.None
+            BuildOptions.Development
         );
 
 
         // 結果出力
         if (!string.IsNullOrEmpty(errorMessage))
+        {
             Debug.LogError("[Error!] " + errorMessage);
+            EditorApplication.Exit(1);
+        }
         else
+        {
             Debug.Log("[Success!]");
+            EditorApplication.Exit(0);
+        }
     }
 
 }
