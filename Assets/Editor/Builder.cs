@@ -21,11 +21,11 @@ public class Builder : MonoBehaviour {
             }
         };
 
-        //Debug.LogError("[Scene!]" + allScene.ToArray().Length);
+        Debug.Log("[Scene!]" + allScene.ToArray().Length);
 
         string errorMessage = BuildPipeline.BuildPlayer(
             allScene.ToArray(),
-            "test",
+            "test.apk",
             BuildTarget.Android,
             BuildOptions.Development
         );
